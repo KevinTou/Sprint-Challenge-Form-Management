@@ -5,34 +5,42 @@ import * as Yup from 'yup';
 
 const UserForm = ({ type, touched, errors }) => {
   return (
-    <div className='max-w-md mx-auto bg-gray-500 my-8 p-16'>
-      <h2>{type} Form</h2>
+    <div className='max-w-md mx-auto bg-gray-500 p-16 mb-32 rounded shadow-xl'>
+      <h2 className='text-center text-xl font-bold'>{type} Form</h2>
       <Form className='flex flex-col'>
-        <label htmlFor='username' className='my-6'>
+        <label
+          htmlFor='username'
+          className='my-6 font-bold flex justify-between flex-col'>
           Username:
           <Field
             type='text'
             name='username'
             placeholder='Enter your username'
             data-testid='username'
+            className='rounded p-2 mt-2'
           />
           {touched.username && errors.username && (
-            <p className='text-red-800'>{errors.username}</p>
+            <p className='text-red-800 font-normal'>{errors.username}</p>
           )}
         </label>
-        <label htmlFor='password'>
+        <label
+          htmlFor='password'
+          className='font-bold flex justify-between flex-col'>
           Password:
           <Field
             type='password'
             name='password'
             placeholder='Enter your password'
             data-testid='password'
+            className='rounded p-2 mt-2'
           />
           {touched.password && errors.password && (
-            <p className='text-red-800'>{errors.password}</p>
+            <p className='text-red-800 font-normal'>{errors.password}</p>
           )}
         </label>
-        <button type='submit' className='bg-green-200 my-6'>
+        <button
+          type='submit'
+          className='bg-gray-300 my-6 p-2 font-medium rounded hover:text-blue-300 hover:bg-gray-7 font-med00'>
           {type}
         </button>
       </Form>

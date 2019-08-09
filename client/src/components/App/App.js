@@ -30,9 +30,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='bg-gray-300 py-20 .w-4/5'>
         <FormikUserForm type='Register' updateMessage={this.updateMessage} />
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap justify-around'>
           {this.state.data.map(food => {
             return <Card key={food.name} food={food} />;
           })}
