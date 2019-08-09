@@ -4,6 +4,10 @@ import '@testing-library/react/cleanup-after-each';
 import UserForm from './UserForm';
 
 describe('<UserForm />', () => {
+  it('renders the form', () => {
+    render(<UserForm />);
+  });
+
   it('submits the form', async () => {
     // const userForm = render(<UserForm type={'Register'} />);
     // console.log(userForm.debug());
